@@ -527,7 +527,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		);
 	});
 
-	it("can run using a custom tool", async () => {
+	it.only("can run using a custom tool", async () => {
 		const root = fsPath(flutterHelloWorldFolder);
 		const hasRunFile = prepareHasRunFile(root, "flutter");
 
@@ -549,7 +549,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		ensureHasRunWithArgsStarting(root, hasRunFile, "run --machine --start-paused");
 	});
 
-	it("can replace all args using custom tool", async () => {
+	it.only("can replace all args using custom tool", async () => {
 		const root = fsPath(flutterHelloWorldFolder);
 		const hasRunFile = prepareHasRunFile(root, "flutter");
 
@@ -574,7 +574,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 	});
 
 	const numReloads = 1;
-	it(`stops at a breakpoint after each reload (${numReloads})`, async function () {
+	it.only(`stops at a breakpoint after each reload (${numReloads})`, async function () {
 		if (flutterTestDeviceIsWeb)
 			return this.skip();
 
@@ -1229,7 +1229,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		);
 	});
 
-	it("includes fields but not getters in variables when evaluateGettersInDebugViews=false", async function () {
+	it/* .only*/("includes fields but not getters in variables when evaluateGettersInDebugViews=false", async function () {
 		if (flutterTestDeviceIsWeb)
 			return this.skip();
 
@@ -1288,7 +1288,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		);
 	});
 
-	it("evaluateName evaluates to the expected value", async () => {
+	it/* .only */("evaluateName evaluates to the expected value", async () => {
 		await openFile(flutterHelloWorldMainFile);
 		const config = await startDebugger(dc, flutterHelloWorldMainFile);
 		await dc.hitBreakpoint(config, {
@@ -1327,7 +1327,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 	});
 
 	describe("can evaluate at breakpoint", () => {
-		it("simple expressions", async () => {
+		it/* .only */("simple expressions", async () => {
 			await openFile(flutterHelloWorldMainFile);
 			const config = await startDebugger(dc, flutterHelloWorldMainFile);
 			await waitAllThrowIfTerminates(dc,
