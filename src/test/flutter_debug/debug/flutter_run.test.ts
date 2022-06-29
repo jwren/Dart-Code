@@ -1229,7 +1229,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		);
 	});
 
-	it/* .only*/("includes fields but not getters in variables when evaluateGettersInDebugViews=false", async function () {
+	it.only("includes fields but not getters in variables when evaluateGettersInDebugViews=false", async function () {
 		if (flutterTestDeviceIsWeb)
 			return this.skip();
 
