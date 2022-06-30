@@ -55,7 +55,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 	/// If we restart too fast, things fail :-/
 	const delayBeforeRestart = () => delay(1000);
 
-	describe.only("resolves the correct debug config", () => {
+	describe("resolves the correct debug config", () => {
 		it("for a simple script", async () => {
 			const resolvedConfig = await getResolvedDebugConfiguration({
 				args: ["--foo"],
@@ -121,7 +121,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		});
 	});
 
-	it.only("runs and remains active until told to quit", async () => {
+	it("runs and remains active until told to quit", async () => {
 		const config = await startDebugger(dc, flutterHelloWorldMainFile);
 		await waitAllThrowIfTerminates(dc,
 			dc.assertOutputContains("console", `Launching lib${path.sep}main.dart on ${deviceName} in debug mode...\n`),
@@ -139,7 +139,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 		);
 	});
 
-	describe.only("prompts the user if trying to run with errors", () => {
+	describe("prompts the user if trying to run with errors", () => {
 		it("and cancels launch if they click Show Errors");
 		it("and launches if they click Debug Anyway");
 		it("unless the errors are in test scripts");
