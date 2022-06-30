@@ -42,7 +42,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         node-version: [14]
         build-version: [stable, dev]
-        bot: [flutter_debug, flutter_debug_sdk_dap]
+        bot: [flutter, flutter_debug_sdk_dap]
         include:
           - os: ubuntu-latest
             bot: flutter_snap
