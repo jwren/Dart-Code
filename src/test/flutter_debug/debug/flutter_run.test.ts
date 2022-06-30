@@ -55,7 +55,7 @@ describe(`flutter run debugger (launch on ${flutterTestDeviceId})`, () => {
 	/// If we restart too fast, things fail :-/
 	const delayBeforeRestart = () => delay(1000);
 
-	describe("resolves the correct debug config", () => {
+	describe.only("resolves the correct debug config", () => {
 		it("for a simple script", async () => {
 			const resolvedConfig = await getResolvedDebugConfiguration({
 				args: ["--foo"],
